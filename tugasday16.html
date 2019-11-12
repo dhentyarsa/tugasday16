@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Soal Radio</title>
+</head>
+<style>
+    button{
+        width: 150px;
+        height: 150px;
+    }
+
+</style>
+<body>
+    <form name="main">
+        1. Presiden ke-3 Indonesia?
+        <br>
+        <br>
+        Prof.B.J. Habiebie<input id="nilai" type="radio" name="soal1" value="benar">
+        Abdurrahman Wahid<input id="nilai" type="radio" name="soal1" value="salah">
+        Soekarno<input id="nilai" type="radio" name="soal1" value="salah">
+        Joko Widodo<input id="nilai" type="radio" name="soal1" value="salah">
+        <br>
+        <br>
+        <br>
+        2. Berikut Nama bahasa programming, kecuali?
+        <br>
+        <br>
+        Python<input id="nilai" type="radio" name="soal2" value="salah">
+        C++<input id="nilai" type="radio" name="soal2" value="salah">
+        Crapp<input id="nilai" type="radio" name="soal2" value="benar">
+        Javascript<input id="nilai" type="radio" name="soal2" value="salah">
+        <br>
+        <br>
+        <br>
+        3. Who's Batman?
+        <br>
+        <br>
+        Clark Kent<input id="nilai" type="radio" name="soal3" value="salah">
+        Bruce Wayne<input id="nilai" type="radio" name="soal3" value="benar">
+        John Connor<input id="nilai" type="radio" name="soal3" value="salah">
+        Apip<input id="nilai" type="radio" name="soal3" value="salah">
+        <br>
+        <br>
+        <br>
+        4. Capital of Indonesia?
+        <br>
+        <br>
+        Surabaya<input id="nilai" type="radio" name="soal4" value="salah">
+        Jakarta<input id="nilai" type="radio" name="soal4" value="benar">
+        Medan<input id="nilai" type="radio" name="soal4" value="salah">
+        Yogyakarta<input id="nilai" type="radio" name="soal4" value="salah">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input class="button" type="button" value="Submit!" onclick="checkNilai()" wid>
+    </form>
+    <h1>Nilai:</h1><h3 id="hasil"></h3>
+</body>
+<script>
+    function checkNilai(){
+        var category1 = document.getElementsByName('soal1')
+        var category2 = document.getElementsByName('soal2')
+        var category3 = document.getElementsByName('soal3')
+        var category4 = document.getElementsByName('soal4')
+        var output = 0
+        for(var i = 0; i < category1.length; i++){
+            if(category1[i].checked){
+                hasil1 = category1[i].value
+                if(hasil1 == 'benar'){
+                    output += 25
+                }
+            }
+        }
+        for(var i = 0; i < category2.length; i++){
+            if(category2[i].checked){
+                hasil2 = category2[i].value
+                if(hasil2 == 'benar'){
+                    output += 25
+                }
+            }
+        }
+        for(var i = 0; i < category3.length; i++){
+            if(category3[i].checked){
+                hasil3 = category3[i].value
+                if(hasil3 == 'benar'){
+                    output += 25
+                }
+            }
+        }
+        for(var i = 0; i < category4.length; i++){
+            if(category4[i].checked){
+                hasil4 = category4[i].value
+                if(hasil4 == 'benar'){
+                    output += 25
+                }
+            }
+        }
+        document.getElementById("hasil").innerHTML = output
+        document.getElementById("nilai").value.checked = false
+    }
+</script>
+</html>
